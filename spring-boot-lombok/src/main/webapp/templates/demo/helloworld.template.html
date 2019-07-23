@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <h1>Mustache.java + Spring Boot +  Lombok demo</h1>
+
+
+
+    <h2>Render one object</h2>
+    <strong>oneStudent name:</strong> {{oneStudent.name}}<br />
+    <strong>oneStudent age:</strong> {{oneStudent.age}}<br />
+    <strong>oneStudent address:</strong> {{oneStudent.address.address}}<br />
+
+    <hr />
+
+    <h2>Render two objects</h2>
+    {{#twoStudents}}
+        <strong>Name:</strong> {{name}}
+        <strong>Age:</strong> {{age}}
+        <strong>Address :</strong> {{address.address}}<br />
+    {{/twoStudents}}
+
+    <hr />
+
+
+    <h2>Render with conditions</h2>
+
+    {{#showIt}}
+        Show it !
+    {{/showIt}}
+
+    {{#neverShowIt}}
+        Never show it !
+    {{/neverShowIt}}
+
+    <br /><br />
+    <hr />
+
+
+    <h2>If nothing to render than what ?</h2>
+
+    {{#noStudents}}
+        <strong>Name:</strong> {{name}}
+    {{/noStudents}}
+    {{^noStudents}}
+        No students here.
+    {{/noStudents}}
+
+
+    <hr />
+
+
+    <h2>Empty list not rendering</h2>
+    {{#emptyList}}
+        <strong>Name:</strong> {{name}}<br />
+    {{/emptyList}}
+
+
+    </body>
+
+</html>

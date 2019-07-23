@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+    id: 1
+    author: Rodrigomirazo
+    changes:
+      - createTable:
+        tableName: Hello
+        columns:
+          - column:
+            name: id
+            type: int
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              nullable: true
+          - column:
+            name: greeting
+            type: varchar(255)
+            constraints:
+              nullable: true
+          - column:
+            name: bye
+            type: BIT(1)
+            constraints:
+              nullable: true
+  - changeSet:
+    id: 2
+    author: Rodrigomirazo
+    changes:
+      - insert:
+        tableName: Hello
+        columns:
+          - column:
+            name: id
+            value: 1
+          - column:
+            name: greeting
+            value: hello
+          - column:
+            name: bye
+            value: 0
