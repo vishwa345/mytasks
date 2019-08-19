@@ -1,0 +1,57 @@
+{
+  "name": "node-xlsx",
+  "author": "Olivier Louvignes <olivier@mg-crea.com>",
+  "version": "0.15.0",
+  "description": "NodeJS Excel files parser & builder",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "yarn test:watch",
+    "test": "NODE_ENV=test jest --runInBand",
+    "test:watch": "yarn test -- --watch",
+    "test:coverage": "yarn test -- --coverage",
+    "lint": "NODE_ENV=test eslint src/ test/",
+    "build": "rimraf lib/*; NODE_ENV=production babel src/ -d lib/ -s",
+    "build:watch": "yarn build -- -w",
+    "prepublish": "yarn build"
+  },
+  "repository": "github:mgcrea/node-xlsx",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "buffer-from": "^1.1.1",
+    "xlsx": "^0.14.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "codacy-coverage": "^3.4.0",
+    "debug-utils": "^0.5.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "expect": "^24.8.0",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "keywords": [
+    "excel",
+    "parser",
+    "builder",
+    "xlsx",
+    "xls"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ]
+  }
+}
